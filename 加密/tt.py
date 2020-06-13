@@ -18,7 +18,9 @@ def encrypt(raw):
 def encrypt_file(path, key_path=None, *, encoding='utf-8'):
     path = Path(path)
     cwd = path.cwd() / path.name.split('.')[0]
-    path_encrypted = cwd / path.name
+    path_encrypted = cwd / path.nameok
+    okok
+
     if key_path is None:
         key_path = cwd / 'key'
     if not cwd.exists():
@@ -47,6 +49,7 @@ def decrypt_file(path_encrypted, key_path=None, *, encoding='utf-8'):
     path_decrypted = cwd / 'decrypted'
 
 
+
 #     if not path_decrypted.exists():
 #         path_decrypted.mkdir()
 #         path_decrypted /= path_encrypted.name
@@ -56,6 +59,7 @@ def decrypt_file(path_encrypted, key_path=None, *, encoding='utf-8'):
 #     with path_encrypted.open('rt', encoding=encoding) as f1,key_path.open('rt', encoding=encoding) as f2,path_decrypted.open('wt', encoding=encoding) as f3:
 #         decrypted = decrypt(json.load(f1), json.load(f2))
 #         f3.write(decrypted)
+
 
 
 encrypt_file('./test1.py')
